@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>530</width>
-    <height>150</height>
+    <width>644</width>
+    <height>369</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -19,13 +19,128 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow { 
+background-color: rgb(14, 38, 127);
+}
+
+QGroupBox#groupBox_1 { 
+background-color: rgb(186, 186, 186);
+border-radius: 20px;
+}
+
+QPushButton#Button_red { 
+background-color: rgb(150, 150, 150);
+border-radius: 20px;
+}
+
+QPushButton#Button_green { 
+background-color: rgb(150, 150, 150);
+border-radius: 20px;
+}
+
+QPushButton#Button_yellow { 
+background-color: rgb(150, 150, 150);
+border-radius: 20px;
+}
+
+QPushButton { 
+color: white;
+}
+
+QPushButton#Button_off { 
+background-color: rgb(186, 186, 186);
+border-radius: 20px;
+}
+
+QPushButton#Button_on { 
+background-color: rgb(186, 186, 186);
+border-radius: 20px;
+}</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="Button_1">
+   <widget class="QGroupBox" name="groupBox_1">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>40</y>
-      <width>151</width>
+      <x>40</x>
+      <y>70</y>
+      <width>131</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QPushButton" name="Button_yellow">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>80</y>
+       <width>51</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Button_red">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>20</y>
+       <width>51</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Button_green">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>140</y>
+       <width>51</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="Button_off">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>130</y>
+      <width>161</width>
       <height>51</height>
      </rect>
     </property>
@@ -34,16 +149,19 @@
       <pointsize>20</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
     <property name="text">
-     <string>Button_1</string>
+     <string>Выключить</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="Button_2">
+   <widget class="QPushButton" name="Button_on">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>40</y>
-      <width>151</width>
+      <x>410</x>
+      <y>130</y>
+      <width>161</width>
       <height>51</height>
      </rect>
     </property>
@@ -52,8 +170,11 @@
       <pointsize>20</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
     <property name="text">
-     <string>Button_2</string>
+     <string>Включить</string>
     </property>
    </widget>
   </widget>
