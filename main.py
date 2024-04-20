@@ -3,10 +3,26 @@
 import sys
 from PyQt6 import QtWidgets, uic
 
-
+# Задаем начальные значения для переменных k
 k_red = 1
 k_green = 1
 k_yellow = 1
+
+# Создаем словарь с RGB значениями для каждого цвета
+color_rgb = {
+    "red": (255, 0, 0),
+    "green": (0, 255, 0),
+    "yellow": (255, 255, 0),
+    "grey": (150, 150, 150)
+}
+
+
+def set_button_color(button, color):
+    button.setStyleSheet("""
+        QPushButton {
+            background-color: rgb(%d, %d, %d);
+        }
+    """ % color)
 
 
 class MainWindow(QtWidgets.QMainWindow):
@@ -23,90 +39,37 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def red(self):
         global k_red
-        # print("lol", k_red)
         k_red += 1
         if k_red % 2 == 0:
-            self.Button_red.setStyleSheet("""
-                QPushButton#Button_red {
-                    background-color: red;
-                }
-            """)
+            set_button_color(self.Button_red, color_rgb["red"])
         else:
-            self.Button_red.setStyleSheet("""
-                QPushButton#Button_red {
-                    background-color: rgb(150, 150, 150);
-                }
-            """)
+            set_button_color(self.Button_red, color_rgb["grey"])
 
     def green(self):
         global k_green
-        # print("lol", k_green)
         k_green += 1
         if k_green % 2 == 0:
-            self.Button_green.setStyleSheet("""
-                QPushButton#Button_green {
-                    background-color: green;
-                }
-            """)
+            set_button_color(self.Button_green, color_rgb["green"])
         else:
-            self.Button_green.setStyleSheet("""
-                QPushButton#Button_green {
-                    background-color: rgb(150, 150, 150);
-                }
-            """)
+            set_button_color(self.Button_green, color_rgb["grey"])
 
     def yellow(self):
         global k_yellow
-        # print("lol", k_yellow)
         k_yellow += 1
         if k_yellow % 2 == 0:
-            self.Button_yellow.setStyleSheet("""
-                QPushButton#Button_yellow {
-                    background-color: yellow;
-                }
-            """)
+            set_button_color(self.Button_yellow, color_rgb["yellow"])
         else:
-            self.Button_yellow.setStyleSheet("""
-                QPushButton#Button_yellow {
-                    background-color: rgb(150, 150, 150);
-                }
-            """)
+            set_button_color(self.Button_yellow, color_rgb["grey"])
 
     def on(self):
-        self.Button_red.setStyleSheet("""
-            QPushButton#Button_red {
-                background-color: red;
-            }
-        """)
-        self.Button_green.setStyleSheet("""
-            QPushButton#Button_green {
-                background-color: green;
-            }
-
-        """)
-        self.Button_yellow.setStyleSheet("""
-            QPushButton#Button_yellow {
-                background-color: yellow;
-            }
-        """)
+        set_button_color(self.Button_red, color_rgb["red"])
+        set_button_color(self.Button_green, color_rgb["green"])
+        set_button_color(self.Button_yellow, color_rgb["yellow"])
 
     def off(self):
-        self.Button_red.setStyleSheet("""
-            QPushButton#Button_red {
-                background-color: rgb(150, 150, 150);
-            }
-        """)
-        self.Button_green.setStyleSheet("""
-            QPushButton#Button_green {
-                background-color: rgb(150, 150, 150);
-            }
-
-        """)
-        self.Button_yellow.setStyleSheet("""
-            QPushButton#Button_yellow {
-                background-color: rgb(150, 150, 150);
-            }
-        """)
+        set_button_color(self.Button_red, color_rgb["grey"])
+        set_button_color(self.Button_green, color_rgb["grey"])
+        set_button_color(self.Button_yellow, color_rgb["grey"])
 
 
 app = QtWidgets.QApplication(sys.argv)
